@@ -17,6 +17,7 @@ function ButtonPayment({state}) {
             })
             if(response.data.url)  return navigate('https://events-app-eta.vercel.app/user/checkout-success')
             
+            
         } catch (error) {
             console.log(error);
         }
