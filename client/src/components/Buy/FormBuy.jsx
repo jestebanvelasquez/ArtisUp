@@ -92,7 +92,7 @@ export default function FormBuy() {
                 headers: { Authorization: `Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}` },
                 data: tickets
             })
-            if (response.data.url) window.location.href = response.data.url // return navigate('http://localhost:3000/user/checkout-success')
+            if (response.data.url) return navigate(response.data.url) //window.location.href = response.data.url // return navigate('http://localhost:3000/user/checkout-success')
         } catch (error) {
             console.log(error);
         }
