@@ -87,7 +87,7 @@ export default function FormBuy() {
             tickets.totalPrice = price
             // console.log(tickets);
             window.localStorage.setItem('cart', JSON.stringify(tickets))
-            const response = await axios('https://artisup-production.up.railway.app/user/create-order', {
+            const response = await axios('https://artisup.up.railway.app/user/create-order', {
                 method: 'POST',
                 headers: { Authorization: `Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}` },
                 data: tickets
