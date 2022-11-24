@@ -9,7 +9,7 @@ import {
 
 export const getUserProfile = () => async (dispatch) => {
     try {
-        const { data } = await axios.get(`https://artisup-production.up.railway.app/users/profile`,{
+        const { data } = await axios.get(`https://artisup.up.railway.app/users/profile`,{
             headers:{ Authorization :`Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}`}
         });
         dispatch(getProfile(data.data));
@@ -22,7 +22,7 @@ export const getUserPayment = () => async (dispatch) => {
     try {
         const id = JSON.parse(window.localStorage.getItem('cart'))
         // console.log(id);
-        const { data } = await axios.get(`https://artisup-production.up.railway.app/user/payments/success/${id.eventId}`,{
+        const { data } = await axios.get(`https://artisup.up.railway.app/user/payments/success/${id.eventId}`,{
             headers:{ Authorization :`Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}`}
         });
         dispatch(getPaymentId(data.data));
@@ -34,7 +34,7 @@ export const getUserPayment = () => async (dispatch) => {
 
 export const getUserDetail = (id) => async (dispatch) => {
     try {
-        const { data } = await axios.get(`https://artisup-production.up.railway.app/users/${id}`);
+        const { data } = await axios.get(`https://artisup.up.railway.app/users/${id}`);
         dispatch(getUsersId(data.data));
     } catch (error) {
         console.log(error);
