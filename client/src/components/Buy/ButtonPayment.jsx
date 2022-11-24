@@ -10,12 +10,12 @@ function ButtonPayment({state}) {
     const handleCheckOut = async (e) => {
         try {
             window.localStorage.setItem(JSON.stringify(state))
-            const response = await axios('http://localhost:4000/user/create-order',{
+            const response = await axios('https://artisup.up.railway.app/user/create-order',{
                 method:'POST',
                 headers: { Authorization :`Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}`},
                 data: state
             })
-            if(response.data.url)  return navigate('http://localhost:3000/user/checkout-success')
+            if(response.data.url)  return navigate('https://events-app-eta.vercel.app/user/checkout-success')
             
         } catch (error) {
             console.log(error);
