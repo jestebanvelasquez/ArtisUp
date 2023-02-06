@@ -34,7 +34,7 @@ export const getUserPayment = () => async (dispatch) => {
 
 export const getUserDetail = (id) => async (dispatch) => {
     try {
-        const { data } = await axios.get(`https://artisup.up.railway.app/users/${id}`);
+        const { data } = await axios.get(`https://artisup-production.up.railway.app/users/${id}`);
         dispatch(getUsersId(data.data));
     } catch (error) {
         console.log(error);
