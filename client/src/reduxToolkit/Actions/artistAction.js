@@ -49,6 +49,7 @@ export const getProfileArtist = () => async (dispatch) => {
             headers: { Authorization :`Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}`}            
         });
         // console.log(data,'data');
+        
         dispatch(getProfile(data.data));
     } catch (error) {
         console.log(error);
