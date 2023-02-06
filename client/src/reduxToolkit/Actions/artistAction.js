@@ -45,7 +45,7 @@ export const getShowDetail = () => async (dispatch) => {
 export const getProfileArtist = () => async (dispatch) => {
 
     try {
-        const { data } = await axios.get(`https://artisup.up.railway.app/artist/profile`,{
+        const { data } = await axios.get(`https://artisup-production.up.railway.app/artist/profile`,{
             headers: { Authorization :`Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}`}            
         });
         // console.log(data,'data');
