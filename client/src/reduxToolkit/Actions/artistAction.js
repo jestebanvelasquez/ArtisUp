@@ -9,7 +9,7 @@ import {
 
 export const getAllArtists = () => async (dispatch) => {
     try {
-        const {data} = await axios.get("https://artisup.up.railway.app/artist/all",{
+        const {data} = await axios.get("https://artisup-production.up.railway.app/artist/all",{
             // headers: { Authorization :`Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}`} 
         })
             console.log(data.data);
@@ -32,7 +32,7 @@ export const getShowByName = (name) => async (dispatch) => {
 export const getShowDetail = () => async (dispatch) => {
     const token = window.localStorage.getItem('auth-token')
     try {
-        const { data } = await axios.get(`https://artisup.up.railway.app/events/:id`,{
+        const { data } = await axios.get(`https://artisup-production.up.railway.app/events/:id`,{
             headers: token
         });
         dispatch(getArtistsId(data.data));
@@ -58,7 +58,7 @@ export const getProfileArtist = () => async (dispatch) => {
 export const getArtistName = (name) => async (dispatch) => {
 
     try {
-        const { data } = await axios.get(`https://artisup.up.railway.app/artist?name=${name}`
+        const { data } = await axios.get(`https://artisup-production.up.railway.app/artist?name=${name}`
         // ,{
         //     // headers: {Authorization : JSON.parse(window.localStorage.getItem('auth-token'))}
         // }
