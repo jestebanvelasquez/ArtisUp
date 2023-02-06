@@ -42,7 +42,7 @@ export default function Login() {
     const loginSubmit = async (e) =>{
         e.preventDefault()
         try {
-            const response = await axios('https://artisup.up.railway.app/signin',{
+            const response = await axios('https://artisup-production.up.railway.app/signin',{
                 method:'POST',
                 data:input
             })
@@ -67,7 +67,7 @@ export default function Login() {
     return (
         <>
             <Header/>
-            <section className="h-full  bg-black">
+            <section className="h-screen  bg-black">
                 <div className="container   mx-auto min-h-[900px] flex  justify-center items-center">
                     <div className="flex flex-col lg:flex-row justify-center items-center mt-20 lg:gap-20  text-gray-800">
                         <div className="md:w-8/12 w-full   md:mb-0 mb-10  rounded-3xl" data-aos='fade-left' data-aos-offset='300'>
