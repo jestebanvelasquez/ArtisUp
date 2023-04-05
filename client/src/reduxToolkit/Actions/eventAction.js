@@ -6,7 +6,7 @@ import {getId} from '../ReducerSlices/EventSlice';
 
 export const getEventId = (id) => async (dispatch) => {
     try {
-        const { data } = await axios.get(`https://artisup-production.up.railway.app/events/${id}`,{
+        const { data } = await axios.get(`https://artisup.up.railway.app/events/${id}`,{
             headers: { Authorization :`Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}`}
         });
         // console.log(data.data);
