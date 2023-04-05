@@ -69,7 +69,7 @@ export default function Create() {
             e.preventDefault()
             event.capacity = Number(event.boxTickets) + Number(event.generalTickets) + Number(event.premiumTickets)
             console.log(event);
-            const response = await axios('https://artisup.up.railway.app/create',{
+            const response = await axios('https://artisup.up.railway.app/artist/create',{
                 method:'POST',
                 headers: { Authorization :`Bearer ${JSON.parse(window.localStorage.getItem('auth-token'))}`},
                 data:event
